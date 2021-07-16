@@ -10,8 +10,8 @@ class For:
         # pos      0        1   2
         numeros=(2,5,6,4,1)
         docente= {'nombre':'Alejandro','edad': 19,'fac':'faci'}
-        listaNotas = [(30,40),(20,40),(50,40)]
-        listaAlumnos = [{"nombre":"Erick","final":60}],{"nombre":"Maria","final":50}
+        listaNotas = [(30,40),(20,40,50),(50,40)]
+        listaAlumnos = [{"nombre":"Erick","final":70}],{"nombre":"Maria","final":60}
         
         
         # j=0 
@@ -62,13 +62,34 @@ class For:
         #     for nota in notas:
         #         acum=acum+nota 
         #     print(nota,end="")
-        #     print(acum/len(notas),end="") 
-        print("\nDiccionario de alumnos")
-        print(listaAlumnos)
-        for alumnos in listaAlumnos.items():
-            print(alumnos)
-            for clave,valor in alumnos.items():
-                print(clave,";",valor,end=" ")
-            print()      
+        #     print(acum/len(notas),end="")
+        # listaAlumnos=[{"mombre":"Jose","final":60},{"mombre":"Erick","final":70},{"nombre":"Maria","final":60},{"nombre":"Danny","final":90}] 
+        # print("\nDiccionario de alumnos")
+        # print(listaAlumnos)
+        # acum=0
+        
+        # for alumnos in listaAlumnos.items():
+        #     print(alumnos,len(alumnos))
+            
+        #     for clave,valor in alumnos.items():
+        #         print(clave,";",valor,end=" ")
+        #         if clave == 'final':
+        #             acum=acum-valor
+                    
+        #     print()   
+        # print("Promedio",acum/len(listaAlumnos))   
+        listaNotas = [(30,40,10,20),(20,40,50),(50,40,10),(10,20)]
+        acum,cont=0,0
+        for notas in listaNotas:
+            print(notas)
+            acumparcial=0
+            for nota in notas:
+                acumparcial +=nota
+            cont=cont+len(notas)
+            acum=acum+acumparcial
+            print("TotalParcial:{} PromParcial:{}".format(acumparcial,acumparcial/len(notas)))
+        print("TotalParcial:{} PromParcial:{}".format(acum,acum/cont))
+        print(acum/cont)
+            
 bucle = For()
 bucle.usoFor()
